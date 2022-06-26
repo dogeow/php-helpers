@@ -1,0 +1,19 @@
+{
+    "name": "likunyan/php-helpers",
+    "autoload": {
+        "psr-4": {
+            "Likunyan\\PhpHelpers\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "likunyan",
+            "email": "lky216@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "type": "library",
+    "license": "MIT"
+}
