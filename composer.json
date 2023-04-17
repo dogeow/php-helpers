@@ -1,18 +1,18 @@
 {
-    "name": "likunyan/php-helpers",
+    "name": "dogeow/php-helpers",
     "autoload": {
         "psr-4": {
-            "Likunyan\\PhpHelpers\\": "src/"
+            "Dogeow\\PhpHelpers\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Likunyan\\PhpHelpers\\Test\\": "tests/"
+            "Dogeow\\PhpHelpers\\Test\\": "tests/"
         }
     },
     "authors": [
         {
-            "name": "likunyan",
+            "name": "dogeow",
             "email": "lky216@gmail.com"
         }
     ],

@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use Likunyan\PhpHelpers\Arr;
+use Dogeow\PhpHelpers\Arr;
 
 final class ArrTest extends TestCase
 {

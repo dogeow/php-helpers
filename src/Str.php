@@ -1,5 +1,5 @@
 <?php
-namespace Likunyan\PhpHelpers;
+namespace Dogeow\PhpHelpers;
 
 class Str
 {
