@@ -5,17 +5,20 @@ class Str
 {
     /*
      * 格式化字节大小
+     * @description int 最高支持到 9223372036854775807，否则变为科学计数法
      *
-     * @param  int  $size  字节数
+     * @param  string  $size  字节数
      * @param  int  $base  MiB 或 MB，即 1024 或 1000
      * @param  string  $delimiter  数字和单位分隔符
      * @return string 格式化后的带单位的大小
      */
-    public static function bytesForHuman(int $size, int $base = 1024, string $delimiter = ''): string
+    public function bytesForHuman(string $size, int $base = 1024, string $delimiter = ''): string
     {
-        $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-        for ($i = 0; $size >= $base && $i < 5; $i++) {
-            $size /= $base;
+        $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'NB', 'DB', 'CB'];
+        $maxPos = count($units) - 1;
+
+        for ($i = 0; $size >= $base && $i < $maxPos; $i++) {
+            $size = bcdiv($size, $base, 3);
         }
 
         return round($size, 2).$delimiter.$units[$i];
