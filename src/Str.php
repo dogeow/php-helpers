@@ -12,7 +12,7 @@ class Str
      * @param  string  $delimiter  数字和单位分隔符
      * @return string 格式化后的带单位的大小
      */
-    public function bytesForHuman(string $size, int $base = 1024, string $delimiter = ''): string
+    public static function bytesForHuman(string $size, int $base = 1024, string $delimiter = ''): string
     {
         $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB', 'BB', 'NB', 'DB', 'CB'];
         $maxPos = count($units) - 1;
