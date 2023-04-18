@@ -4,6 +4,7 @@ class Live
 {
     /**
      * 判断手机号的运营商
+     * @url https://learnku.com/laravel/t/76074
      * @param  int|string  $number  手机号码
      * @return string
      */
@@ -45,6 +46,7 @@ class Live
 
     /**
      * 判断手机号是否虚拟号码
+     * @url https://learnku.com/laravel/t/76074
      * @param  int|string  $number  手机号码
      * @return bool
      */
