@@ -60,7 +60,7 @@ class Str
         $color .= (strlen($gHex) < 2 ? '0' : '').$gHex;
         $color .= (strlen($bHex) < 2 ? '0' : '').$bHex;
 
-        return "#${color}";
+        return "#$color";
     }
 
     /**
@@ -99,7 +99,7 @@ class Str
             return self::rgb2Hex($r, (int) $g, (int) $b);
         }
 
-        return "rgb(${r}, ${g}, ${b})";
+        return "rgb($r, $g, $b)";
     }
 
     public static function getTitle($url)
@@ -117,19 +117,6 @@ class Str
     }
 
     /**
-     * @param $input
-     * @return array|string|null
-     */
-    public static function br2nl($input)
-    {
-        return preg_replace(
-            '/<br\s?\/?>/iu',
-            "\n",
-            str_replace("\n", '', str_replace("\r", '', htmlspecialchars_decode($input)))
-        );
-    }
-
-    /**
      * 给定开始字符和结束字符，截取这个区间
      *
      * @param  string  $string
@@ -143,43 +130,5 @@ class Str
         $endPos = strpos($string, $end);
 
         return substr($string, $startPos, $endPos - $startPos);
-    }
-
-    public static function status($status): ?string
-    {
-        return match ($status) {
-            '新' => ' new',
-            '热' => ' hot',
-            '沸' => ' boil',
-            default => null,
-        };
-    }
-
-    /*
-     * 微博热度
-     *
-     * @param  int  $size  热度
-     * @return string 格式化后的带单位的大小
-     */
-    public static function weiboHotForHuman(int $size): string
-    {
-        $units = ['', 'K', 'M', 'G'];
-        for ($i = 0; $size >= 1000 && $i < 5; $i++) {
-            $size /= 1000;
-        }
-
-        return round($size).$units[$i];
-    }
-
-    public static function topping($topping)
-    {
-        if (count($topping) >= 2) {
-            $diff = $topping[0]->created_at->diffInMinutes($topping[1]->created_at);
-            if ($diff > 2) {
-                $topping->pop();
-            }
-        }
-
-        return $topping;
     }
 }
