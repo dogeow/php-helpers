@@ -1,6 +1,9 @@
 <?php
 namespace Dogeow\PhpHelpers;
 
+/**
+ * 字符串的修改
+ */
 class Str
 {
     /*
